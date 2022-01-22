@@ -1,33 +1,31 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Recursive:wght@500;900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@800&family=Recursive:wght@500;1000&display=swap');
 
-:root {
-    /* --content-width: 500px; */
-    
-}
-
 body{
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100%;
+    min-height: 98vh;
+    min-width: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     font: 1em 'Recursive', 'Cormorant Garamond', serif;
 }
 
-#header{
+.header{
+    margin-left: 30%;
     font: 2em 'Recursive', 'Cormorant Garamond', serif;
 }
 
 .container{
     margin-left: 30%;
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 75%;
+    width: 60%;
 }
 
 #board{
@@ -41,26 +39,39 @@ body{
 }
 
 
-#button-left-col{
+.option-column{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    border: 3px solid gray;
+    border-radius: 10px;
+    width: 20%;
+
 }
 
-
-#button-right-col{
+.button-column{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    flex: 1;
+    width: 100%
+
+}
+
+.panel-name{
+    padding-bottom: 20%;
+    text-decoration: underline;
 }
 
 button{
     font-family: inherit;
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
 }
 
-}
 
 /* #slidecontainer{
     padding-top: 10%;
@@ -96,10 +107,43 @@ button{
 }
 
 
-/* #id span{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-} */
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    width: 100%;
+    background: rgba(89,89,89,0.7);
+    color: white;
+    font: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
 
+.footer-box{
+    display: inline;
+    display: flex;
+    align-items: center;
+    flex:1;
+    justify-content: flex-end;
+}
+
+.footer-box ul{
+    list-style: none;
+    display: inline-block;
+    padding-left: 10px;
+    
+}
+
+.footer-box ul.contact li{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.social-media-logo{
+    display: inline-block;
+    padding-top: 0px;
+    height: 32px;
+    width: 32px;
+}

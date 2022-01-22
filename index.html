@@ -8,17 +8,20 @@
     <meta charset = "UTF-8"/>
 </head>
 <body>
-    <div id = "header">
-        <h1 id =>Etch-a-Sketch</h1>
+    <div class = "header">
+        <h1>Etch-a-Sketch</h1>
     </div>
 
     
     <div class = "container">
        
-        <div id = "button-left-col">
-            <button id= "black">Black</button>
-            <input type = "color" id = "colorpicker" value = "black">
-            <button id= "random">Random</button>
+        <div class = "option-column">
+            <h1 class = "panel-name">Color Panel</h1>
+            <div class = "button-column">
+                <input type = "color" id = "colorpicker" value = "black">
+                <button id= "black">Black</button>
+                <button id= "random">Random</button>
+            </div>
         </div>
 
         <div class = "wrapper">
@@ -28,18 +31,43 @@
             </div>
         </div>
     
-        <div id = "button-right-col">
-            <button id= "erase">Erase</button>
-            <button id= "clear">Clear Board</button>
-            <div id = "slidecontainer">
-                <input type="range" min="2" max="64" value="16" class="slider", id="myslider">
+        <div class = "option-column">
+            <h1 class = "panel-name">Other Options</h1>
+            <div class = "button-column">
+                <button id= "erase">Erase</button>
+                <button id= "clear">Clear Board</button>
+                <div id = "slidecontainer">
+                    <input type="range" min="2" max="64" value="16" class="slider", id="myslider">
+                </div>
             </div>
         </div>
     </div>
     
-
-   
-    
+     <footer>
+        <div class = "footer-box" >
+        <p>As Part of <a href = "https://www.theodinproject.com/">The Odin Project</a> Curriculum</p>
+        </div>
+        <div class = "footer-box" style="margin-right: 10%;">
+           <p style="display: inline-block;">Contact: </p>
+            <ul class = "contact">
+                <li>
+                    <a  href= "https://github.com/onestonec">
+                        <img class = "social-media-logo"  src="/github.png" >
+                    </a> 
+                </li>
+                <li>
+                    <a href= "https://www.linkedin.com/in/winston-c-65164885/">
+                        <img class = "social-media-logo"  src="/linkedin.png" >
+                    </a> 
+                </li>
+            </ul>
+        </div>
+          
+        </div>
+        
+        
+        
+    </footer>
 
 </body>
 
