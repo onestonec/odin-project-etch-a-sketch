@@ -11,20 +11,32 @@
     <div id = "header">
         <h1 id =>Etch-a-Sketch</h1>
     </div>
-    <div id = "slidecontainer">
-        <input type="range" min="2" max="64" value="16" class="slider", id="myslider">
-    </div>
 
-    <div id ="container">
+    
+    <div class = "container">
        
-        
-    </div>
+        <div id = "button-left-col">
+            <button id= "black">Black</button>
+            <input type = "color" id = "colorpicker" value = "black">
+            <button id= "random">Random</button>
+        </div>
 
-    <div id = "button-row">
-        <button id="black">Black</button>
-        <button id="color">Color</button>
-        <button id="erase">Erase</button>
+        <div class = "wrapper">
+            <div id ="board">
+            
+                
+            </div>
+        </div>
+    
+        <div id = "button-right-col">
+            <button id= "erase">Erase</button>
+            <button id= "clear">Clear Board</button>
+            <div id = "slidecontainer">
+                <input type="range" min="2" max="64" value="16" class="slider", id="myslider">
+            </div>
+        </div>
     </div>
+    
 
    
     

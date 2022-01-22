@@ -1,7 +1,10 @@
-const container = document.getElementById("container");
+const board = document.getElementById("board");
 const black = document.getElementById("black");
 const color = document.getElementById("color");
+const random = document.getElementById("random");
 const erase = document.getElementById("erase");
+const colorpicker = document.getElementById("colorpicker");
+const clear = document.getElementById("clear");
 const slider = document.getElementById("myslider");
 const MODE_DEFAULT = "normal";
 const COLOR_DEFAULT = "black";
@@ -15,16 +18,16 @@ let square = document.getElementsByClassName("square");
 
 function makegrid(row_num)
 {
+    board.style.gridTemplateColumns = `repeat(${row_num}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${row_num}, 1fr)`;
     for (i = 0; i < row_num;i++)
     {
-        let newrow = document.createElement("div");
-        for (j = 0; j < row_num; j++)
+        for (j = 0; j < row_num; j++) //column
         {
             let temp_square = document.createElement("div");
             temp_square.addEventListener("mouseover", setcolor);
-            newrow.appendChild(temp_square).className = "square";
+            board.appendChild(temp_square).className = "square";
         }
-        container.appendChild(newrow).className = "gridRow";
     }  
 }
 
@@ -34,7 +37,6 @@ function setCurrentMode (mode)
 {
     currentMode = mode;
     setcolor;
-    console.log(currentMode);
 }
 
 
@@ -46,13 +48,15 @@ function setcolor (e){
     {
         console.log(currentMode);
         e.target.style.background = "white";
-    }else if (currentMode == "color")
+    } else if (currentMode == "random")
     {
         console.log(currentMode);
         let red = Math.floor(Math.random() * 255);
         let green = Math.floor(Math.random() * 255);
         let blue = Math.floor(Math.random() * 255);
         e.target.style.background = `rgb(${red}, ${green}, ${blue})`;
+    } else if (currentMode = "color"){
+        e.target.style.background = currentColor;
     }
 }
 
@@ -62,18 +66,27 @@ function eraseboard (){
 }
 
 black.onclick = () => setCurrentMode(MODE_DEFAULT);
-color.onclick = () => setCurrentMode("color");
+random.onclick = () => setCurrentMode("random");
 erase.onclick = () => setCurrentMode("eraser");
+clear.onclick = () => changesize();
 
 currentSize = slider.value;
 slider.oninput = () => changesize();
+colorpicker.oninput = () =>{
+    currentColor = colorpicker.value;
+    currentMode = "color";
+    setcolor;
+    console.log(currentColor);
+}
+
+
 
 function changesize(){
     currentSize = slider.value;
     let removal = document.getElementsByClassName("gridRow");
-    while(container.firstChild)
+    while(board.firstChild)
     {
-        container.removeChild(container.lastChild);
+        board.removeChild(board.lastChild);
     }
     makegrid(currentSize);
     console.log(slider.value);
